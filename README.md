@@ -1,2 +1,2 @@
-# -valentines-card-
+# valentines-card
 valentines card
