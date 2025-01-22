@@ -1,0 +1,100 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f8c9d3;  /* Light pink background */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);  /* Slightly transparent white background for card */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    z-index: 1;  /* Ensures card is above the hearts */
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f07171;  /* Soft red for the question */
+}
+
+.answers {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.answer {
+    background-color: #ff69b4;  /* Hot pink button color */
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.answer:hover {
+    background-color: #ff4081;  /* Lighter pink on hover */
+}
+
+.response {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.heart {
+    position: absolute;
+    top: 100%;  /* Start at the bottom */
+    font-size: 50px;  /* Increase the size of the hearts */
+    color: #ff69b4;
+    pointer-events: none;
+    animation: floatHearts 10s ease-in-out infinite;
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-100vh) translateX(calc(30vw - 50%)) rotate(720deg);
+    }
+}
+
+/* Add some randomness to the heart's animation timing */
+.heart:nth-child(odd) {
+    animation-duration: 8s;
+    animation-delay: -2s;
+}
+
+.heart:nth-child(even) {
+    animation-duration: 12s;
+    animation-delay: -4s;
+}
+
+.heart:nth-child(3) {
+    animation-duration: 10s;
+    animation-delay: -3s;
+}
+
+.heart:nth-child(4) {
+    animation-duration: 14s;
+    animation-delay: -5s;
+}
